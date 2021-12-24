@@ -3,11 +3,12 @@ package com.my
 fun returnNothing() = "Return nothing text"
 
 fun main() {
-    first()
-    println(secondIfExpr(1))
-    third()
-    forthLoop()
-    nullsSmart()
+//    first()
+//    println(secondIfExpr(1))
+//    third()
+//    forthLoop()
+//    nullsSmart()
+    string("1+(2+3)+2+3")
 
 }
 
@@ -115,5 +116,10 @@ fun nullsSmart(){
 }
 enum class Suit {
     Club, Diamond, Heart
+}
+
+fun string(str: String){
+    str.removeSurrounding("(")
+    println(str)
 }
 
