@@ -19,17 +19,20 @@ class PersonClass(name: String, age: Int){}
 
 fun main(){
     val course = Course("course")
+    val courseWithConstructor = Course("courseWithConstr", "Place")
     course.description = "description"
-    course.show()
+    println(course.show())
     println(course)
 
     course.description = ""
     course.someStr = ""
 
     println(course)
+    println(courseWithConstructor)
 }
-class Course(courseTitle: String){
+class Course(courseTitle: String = "SomeTitle"){
     private val title = courseTitle
+    private var place = ""
     internal var description = ""
         get(){
             return if (field.isNullOrBlank()) "no description " else "$field"
@@ -39,11 +42,19 @@ class Course(courseTitle: String){
         return if (field.isNullOrBlank()) "no description " else "$field"
     }
 
-    fun show(){
-        println("Title is $title")
-    }
+    fun show() = "Title is $title"
 
     override fun toString(): String {
         return "($title) and ($description) and ($someStr)"
+    }
+
+    init {
+        println( "Hello from init ${show()}")
+    }
+
+    // constructors
+
+    constructor(title: String, place:String): this(title){
+        this.place = place
     }
 }
