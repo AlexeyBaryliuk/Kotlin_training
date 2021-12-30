@@ -20,7 +20,7 @@ class PersonClass(name: String, age: Int){}
 fun main(){
     val course = Course("course")
     val courseWithConstructor = Course("courseWithConstr", "Place")
-    course.description = "description"
+    course.description = "escription"
     println(course.show())
     println(course)
 
